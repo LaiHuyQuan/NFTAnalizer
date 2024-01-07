@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="1366.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+   <top>
+      <HBox prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label text="NFT" textFill="#004cff">
+               <font>
+                  <Font size="50.0" />
+               </font>
+               <HBox.margin>
+                  <Insets top="10.0" />
+               </HBox.margin>
+            </Label>
+            <Region prefHeight="200.0" prefWidth="200.0" HBox.hgrow="ALWAYS" />
+            <Button fx:id="btnUpdate" mnemonicParsing="false" onAction="#btnUpdatePressed" prefHeight="60.0" prefWidth="100.0" text="Update">
+               <font>
+                  <Font size="16.0" />
+               </font>
+               <HBox.margin>
+                  <Insets top="20.0" />
+               </HBox.margin>
+            </Button>
+         </children>
+         <BorderPane.margin>
+            <Insets left="20.0" right="20.0" top="20.0" />
+         </BorderPane.margin>
+      </HBox>
+   </top>
+   <center>
+      <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+         <children>
+            <VBox>
+               <children>
+                  <HBox alignment="CENTER_LEFT" prefHeight="40.0" prefWidth="200.0" spacing="10.0">
+                     <children>
+                        <Label text="Source" />
+                        <MenuButton fx:id="menuButtonSourceType" mnemonicParsing="false" text="Post/Blog">
+                          <items>
+                            <MenuItem mnemonicParsing="false" onAction="#menuItemPostBlogChoose" text="Post/Blog" />
+                            <MenuItem mnemonicParsing="false" onAction="#menuItemNFTChosse" text="NFT" />
+                          </items>
+                           <HBox.margin>
+                              <Insets />
+                           </HBox.margin>
+                        </MenuButton>
+                        <MenuButton fx:id="menuButtonSource" mnemonicParsing="false" text="Twitter">
+                          <items>
+                            <MenuItem fx:id="menuItemTwitter" mnemonicParsing="false" onAction="#menuItemTwitterChoose" text="Twitter" />
+                              <MenuItem fx:id="menuItemDecrypt" mnemonicParsing="false" onAction="#menuItemDecryptChoose" text="Decrypt" />
+                              <MenuItem fx:id="menuItemCointelegraph" mnemonicParsing="false" onAction="#menuItemCointelegraphChoose" text="Cointelegraph" />
+                            <MenuItem fx:id="menuItemOpenSea" mnemonicParsing="false" onAction="#menuItemOpenSeaChoose" text="OpenSea" visible="false" />
+                              <MenuItem fx:id="menuItemBinance" mnemonicParsing="false" onAction="#menuItemBinanceChoose" text="Binance" visible="false" />
+                              <MenuItem fx:id="menuItemRarible" mnemonicParsing="false" onAction="#menuItemRaribleChoose" text="Rarible" visible="false" />
+                          </items>
+                        </MenuButton>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER_LEFT" prefHeight="40.0" prefWidth="200.0" spacing="10.0">
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                     <padding>
+                        <Insets bottom="10.0" top="10.0" />
+                     </padding>
+                     <children>
+                        <Label text="Serach" />
+                        <MenuButton fx:id="menuButtonSearch" mnemonicParsing="false" text="Author">
+                          <items>
+                              <MenuItem fx:id="menuItemAuthor" mnemonicParsing="false" onAction="#menuItemAuthorChoose" text="Author" />
+                              <MenuItem fx:id="menuItemTitle" mnemonicParsing="false" onAction="#menuItemTitleChoose" text="Title" />
+                              <MenuItem fx:id="menuItemDate" mnemonicParsing="false" onAction="#menuItemDateChoose" text="Date" />
+                              <MenuItem fx:id="menuItemHashtag" mnemonicParsing="false" onAction="#menuItemHashtagChoose" text="Hashtag/Tag" />
+                              <MenuItem fx:id="menuItemCollection" mnemonicParsing="false" onAction="#menuItemCollectionChoose" text="Collection" visible="false" />
+                          </items>
+                        </MenuButton>
+                        <StackPane prefHeight="150.0" prefWidth="200.0">
+                           <children>
+                              <TextField fx:id="tfSearch" />
+                              <DatePicker fx:id="datePicker" promptText="Select" visible="false" />
+                           </children>
+                        </StackPane>
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+            <StackPane>
+               <children>
+                  <TableView fx:id="tblTwitter">
+                     <placeholder>
+                        <Label text="Empty" />
+                     </placeholder>
+                    <columns>
+                      <TableColumn fx:id="colAuthorTwitter" prefWidth="158.40008544921875" text="Author" />
+                        <TableColumn fx:id="colDateTwitter" prefWidth="148.0" text="Date" />
+                        <TableColumn fx:id="colRepliesTwitter" prefWidth="121.5999755859375" text="Replies" />
+                      <TableColumn fx:id="colRepostsTwitter" prefWidth="201.0" text="Reposts" />
+                        <TableColumn fx:id="colLikesTwitter" prefWidth="165.0" text="Likes" />
+                        <TableColumn fx:id="colViewsTwitter" prefWidth="154.0" text="Views" />
+                        <TableColumn fx:id="colHashtagsTwitter" prefWidth="397.0" text="Hashtags" />
+                    </columns>
+                     <columnResizePolicy>
+                        <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                     </columnResizePolicy>
+                  </TableView>
+                  <TableView fx:id="tblOpenSea" visible="false">
+                    <columns>
+                      <TableColumn fx:id="colRankOpenSea" prefWidth="76.0" text="#" />
+                      <TableColumn fx:id="colCollectionOpenSea" prefWidth="364.0" text="Collection" />
+                        <TableColumn fx:id="colVolumeOpenSea" prefWidth="75.0" text="Volume" />
+                        <TableColumn fx:id="colVolumeChangeOpenSea" prefWidth="75.0" text="\% Change" />
+                        <TableColumn fx:id="colFloorPriceOpenSea" prefWidth="75.0" text="Floor Price" />
+                        <TableColumn fx:id="colSalesOpenSea" prefWidth="75.0" text="Sales" />
+                        <TableColumn fx:id="colOwnersOpenSea" prefWidth="75.0" text="Owners" />
+                        <TableColumn fx:id="colItemsOpenSea" prefWidth="75.0" text="Items" />
+                    </columns>
+                     <columnResizePolicy>
+                        <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                     </columnResizePolicy>
+                  </TableView>
+                  <TableView fx:id="tblCointelegraph" visible="false">
+                    <columns>
+                      <TableColumn fx:id="colDateCointelegraph" prefWidth="137.0" text="Date" />
+                      <TableColumn fx:id="colAuthorCointelegraph" prefWidth="161.0" text="Author" />
+                        <TableColumn fx:id="colTitleCointelegraph" prefWidth="599.0" text="Title" />
+                        <TableColumn fx:id="colViewsCointelegraph" prefWidth="193.0" text="Views" />
+                        <TableColumn fx:id="colTagsCointelegraph" prefWidth="226.0" text="Tags" />
+                    </columns>
+                     <columnResizePolicy>
+                        <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                     </columnResizePolicy>
+                  </TableView>
+                  <TableView fx:id="tblBinance" visible="false">
+                    <columns>
+                      <TableColumn fx:id="colRankBinance" prefWidth="75.0" text="#" />
+                      <TableColumn fx:id="colCollectionBinance" prefWidth="255.0" text="Collection" />
+                        <TableColumn fx:id="colVolumeBinance" prefWidth="75.0" text="Volume" />
+                        <TableColumn fx:id="colVolumeChangeBinance" prefWidth="75.0" text="Volume Change" />
+                        <TableColumn fx:id="colFloorPriceBinance" prefWidth="75.0" text="Floor Price" />
+                        <TableColumn fx:id="colFloorChangeBinance" prefWidth="75.0" text="Floor Change" />
+                        <TableColumn fx:id="colOwnersBinance" prefWidth="75.0" text="Owners" />
+                        <TableColumn fx:id="colItemsBinance" prefWidth="75.0" text="Items" />
+                    </columns>
+                     <columnResizePolicy>
+                        <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                     </columnResizePolicy>
+                  </TableView>
+                  <TableView fx:id="tblDecrypt" visible="false">
+                    <columns>
+                      <TableColumn fx:id="colTitleDecrypt" prefWidth="610.0" text="Title" />
+                      <TableColumn fx:id="colAuthorDecrypt" prefWidth="299.0" text="Author" />
+                        <TableColumn fx:id="colDateDecrypt" prefWidth="215.0" text="Date" />
+                        <TableColumn fx:id="colTagsDecrypt" prefWidth="193.0" text="Tags" />
+                    </columns>
+                     <columnResizePolicy>
+                        <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                     </columnResizePolicy>
+                  </TableView>
+                  <TableView fx:id="tblRarible" visible="false">
+                    <columns>
+                      <TableColumn fx:id="colRankRarible" prefWidth="185.0" text="#" />
+                      <TableColumn fx:id="colCollectionRarible" prefWidth="808.0" text="Collection" />
+                        <TableColumn fx:id="colVolumeRarible" prefWidth="321.0" text="Volume" />
+                        <TableColumn fx:id="colVolumeChangeRarible" prefWidth="321.0" text="Volume Change" />
+                        <TableColumn fx:id="colFloorPriceRarible" prefWidth="321.0" text="Floor Price" />
+                        <TableColumn fx:id="colFloorChangeRarible" prefWidth="321.0" text="Floor Change" />
+                        <TableColumn fx:id="colOwnersRarible" prefWidth="321.0" text="Owners" />
+                        <TableColumn fx:id="colItemsRarible" prefWidth="321.0" text="Items" />
+                    </columns>
+                     <columnResizePolicy>
+                        <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                     </columnResizePolicy>
+                  </TableView>
+               </children>
+            </StackPane>
+            <HBox alignment="TOP_RIGHT" prefHeight="100.0" prefWidth="200.0" spacing="20.0">
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+               <padding>
+                  <Insets top="20.0" />
+               </padding>
+               <children>
+                  <Button fx:id="btnDetails" mnemonicParsing="false" onAction="#btnDetailsPressed" prefWidth="100.0" text="Details" visible="false" />
+               </children>
+            </HBox>
+         </children>
+         <BorderPane.margin>
+            <Insets left="20.0" right="20.0" />
+         </BorderPane.margin>
+      </VBox>
+   </center>
+</BorderPane>
